@@ -1,6 +1,22 @@
-## Getting Started
+## Introduction
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Merkle trees are non-linear binary tree data structure where the non-leaf node is defined as the hash of its respective child nodes.
+
+The leaf nodes are technically the bottom most nodes.
+
+The tree is constructed bottom-up.
+
+![Merkle Tree](/images/merkle-tree.webp)
+
+In the above image, we can see 4 transactions have taken place in the block, namely **X**, **Y**, **Z** and **W**. The transactions are then hashed and stored in leaf nodes.
+
+Once hashed, these nodes are combined to form combined hash of **XY** and **ZW** respectively.
+
+This process continues till we reach the Merkle Root or root hash.
+
+A transaction can be verified if the previous hash values are verifiable.
+
+If we find any difference in hash values then we can detect it in O(log N) time complexity.
 
 ## Folder Structure
 
@@ -10,9 +26,3 @@ The workspace contains two folders by default, where:
 - `lib`: the folder to maintain dependencies
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
